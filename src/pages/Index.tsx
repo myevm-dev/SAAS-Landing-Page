@@ -278,11 +278,11 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="glass p-8 rounded-2xl text-center"
+                className="glass p-8 rounded-2xl text-center flex flex-col h-full"
               >
                 <h3 className="text-xl font-bold mb-4">{plan.name}</h3>
                 <div className="text-3xl font-bold mb-6 gradient-text">{plan.price}<span className="text-base text-gray-400">/month</span></div>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="text-gray-300">{feature}</li>
                   ))}
