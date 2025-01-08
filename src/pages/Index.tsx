@@ -31,7 +31,7 @@ const Index = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
           >
-            Transform Your Business with
+            Business with
             <span className="gradient-text"> Modern SaaS</span>
           </motion.h1>
           <motion.p 
