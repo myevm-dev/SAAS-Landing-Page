@@ -2,7 +2,6 @@
 
 ## Project info
 
-**URL**: https://run.gptengineer.app/projects/aa7ccf2c-9501-4fb8-807e-50982398f7bf/improve
 
 ## How can I edit this code?
 

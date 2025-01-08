@@ -9,14 +9,13 @@ const Index = () => {
       <nav className="fixed w-full z-50 glass">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl sm:text-2xl font-bold gradient-text">SaaSify</div>
+            <div className="text-xl sm:text-2xl font-bold gradient-text">MyEVM</div>
             <div className="hidden md:flex space-x-6 lg:space-x-8">
               <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
               <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
               <a href="#team" className="text-gray-300 hover:text-white transition-colors">Team</a>
               <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Testimonials</a>
               <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
             </div>
             <Button className="bg-white text-black hover:bg-gray-200 text-sm sm:text-base px-4 sm:px-6">Get Started</Button>
           </div>
@@ -297,96 +296,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6">
-        <div className="container mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12">
-            Get in Touch
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8"
-            >
-              <div className="flex items-center space-x-4">
-                <MapPin className="w-6 h-6 text-gray-400" />
-                <div>
-                  <h3 className="font-bold">Address</h3>
-                  <p className="text-gray-400">123 Innovation Street, Tech City, TC 12345</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <Mail className="w-6 h-6 text-gray-400" />
-                <div>
-                  <h3 className="font-bold">Email</h3>
-                  <p className="text-gray-400">contact@saasify.com</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <Phone className="w-6 h-6 text-gray-400" />
-                <div>
-                  <h3 className="font-bold">Phone</h3>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
-                </div>
-              </div>
-            </motion.div>
-            <motion.form
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="glass p-8 rounded-2xl space-y-6"
-            >
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 rounded-md bg-background border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 rounded-md bg-background border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-md bg-background border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white"
-                ></textarea>
-              </div>
-              <Button className="w-full bg-white text-black hover:bg-gray-200">
-                Send Message
-              </Button>
-            </motion.form>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-bold gradient-text mb-4 md:mb-0">SaaSify</div>
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-            </div>
-          </div>
-          <div className="text-center mt-8 text-gray-400">
-            © 2024 SaaSify. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
