@@ -1,28 +1,54 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import InputBar from "@/components/InputBar";
 import OutputBar from "@/components/OutputBar";
+import LayerColumn from "@/components/LayerColumn";
 
-const Index = () => (
-  <div className="min-h-screen flex flex-col">
-    <Navigation />
+const Index = () => {
+  const [layers, setLayers] = useState<number[]>([]);
 
-    {/* Layout container */}
-    <div className="flex flex-grow mt-20">
-      {/* Left sidebar */}
-      <InputBar />
+  // Add a new layer
+  const addLayer = () => {
+    setLayers([...layers, layers.length]);
+  };
 
-      {/* Main content area (pushed between sidebars) */}
-      <main className="flex-grow ml-[80px] mr-[80px] p-4">
-        {/* Page content goes here */}
-      </main>
+  // Remove a layer
+  const removeLayer = (index: number) => {
+    setLayers(layers.filter((_, i) => i !== index));
+  };
 
-      {/* Right sidebar */}
-      <OutputBar />
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navigation />
+
+      {/* Main layout container */}
+      <div className="flex flex-grow mt-20">
+        {/* Left Sidebar (Input) */}
+        <InputBar />
+
+        {/* Middle Layers (Centered Between Input & Output Bars) */}
+        <div className="flex flex-grow justify-start items-stretch ml-[80px] mr-[80px] pb-16">
+          {layers.map((_, index) => (
+            <LayerColumn key={index} index={index} removeLayer={removeLayer} />
+          ))}
+        </div>
+
+        {/* Right Sidebar (Output) */}
+        <OutputBar />
+      </div>
+
+      {/* Footer with Add Layer Button */}
+      <Footer>
+        <button
+          onClick={addLayer}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Add Layer
+        </button>
+      </Footer>
     </div>
-
-    <Footer />
-  </div>
-);
+  );
+};
 
 export default Index;
