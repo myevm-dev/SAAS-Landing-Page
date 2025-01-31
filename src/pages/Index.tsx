@@ -1,20 +1,27 @@
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Features from "@/components/Features";
-import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing";
+import Footer from "@/components/Footer";
+import InputBar from "@/components/InputBar";
+import OutputBar from "@/components/OutputBar";
 
 const Index = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen flex flex-col">
     <Navigation />
-    <Hero />
-    <About />
-    <Features />
-    <Team />
-    <Testimonials />
-    <Pricing />
+
+    {/* Layout container */}
+    <div className="flex flex-grow mt-20">
+      {/* Left sidebar */}
+      <InputBar />
+
+      {/* Main content area (pushed between sidebars) */}
+      <main className="flex-grow ml-[80px] mr-[80px] p-4">
+        {/* Page content goes here */}
+      </main>
+
+      {/* Right sidebar */}
+      <OutputBar />
+    </div>
+
+    <Footer />
   </div>
 );
 
