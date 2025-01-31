@@ -6,12 +6,11 @@ const LayerColumn = ({ index, moveLeft, moveRight, removeLayer, totalLayers }: {
   totalLayers: number;
 }) => {
   return (
-    <div className="relative flex flex-col items-center bg-gray-700 p-4 border border-gray-600 flex-grow">
+    <div className="relative flex flex-col items-center bg-gray-700 p-4 border border-gray-600 flex-grow z-[50] pointer-events-auto">
       <span className="text-white font-bold">Layer {index + 1}</span>
 
       {/* Control Buttons (Left, Remove, Right) */}
       <div className="flex mt-auto space-x-2">
-        {/* Left Arrow - Disabled for the first layer */}
         <button
           onClick={() => moveLeft(index)}
           disabled={index === 0}
@@ -22,7 +21,6 @@ const LayerColumn = ({ index, moveLeft, moveRight, removeLayer, totalLayers }: {
           ←
         </button>
 
-        {/* Remove Layer Button */}
         <button
           onClick={() => removeLayer(index)}
           className="bg-red-500 text-white text-xs px-2 py-1 rounded"
@@ -30,7 +28,6 @@ const LayerColumn = ({ index, moveLeft, moveRight, removeLayer, totalLayers }: {
           ✖
         </button>
 
-        {/* Right Arrow - Disabled for the last layer */}
         <button
           onClick={() => moveRight(index)}
           disabled={index === totalLayers - 1}

@@ -20,9 +20,9 @@ const InputBar = () => {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-20 h-[calc(100vh-80px)] w-[80px] bg-gray-800 text-white p-2 flex flex-col items-center overflow-y-auto">
+    <aside className="fixed left-0 top-20 h-[calc(100vh-80px)] w-[80px] bg-gray-800 text-white p-2 flex flex-col items-center overflow-y-auto z-[100]">
       {tokens.map((token) => (
-        <div key={token.address} className="flex flex-col items-center mb-4 mt-2 relative">
+        <div key={token.address} className="flex flex-col items-center mb-4 mt-2 relative pointer-events-auto">
           {/* Token Image with Tooltip */}
           <img
             src={token.image}
@@ -39,7 +39,7 @@ const InputBar = () => {
             id={`tooltip-${token.address}`}
             place="right"
             offset={15}
-            className="!fixed !z-[9999] bg-black text-white p-2 rounded text-xs max-w-[200px] break-words shadow-lg"
+            className="!fixed !z-[99999] bg-black text-white p-2 rounded text-xs max-w-[200px] break-words shadow-lg pointer-events-auto"
           >
             <span>Vault Balance:</span><br />
             <span className="font-bold">{balances[token.address] || "Loading..."}</span>
