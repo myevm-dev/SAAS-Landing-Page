@@ -19,7 +19,10 @@ export const getVaultBalance = async (tokenAddress: string) => {
     const decimals = token ? token.decimals : 18; // Default to 18 if unknown
 
     // Format balance using correct decimals and display 6 decimal places
-    return parseFloat(ethers.formatUnits(balance, decimals)).toFixed(6);
+    const formattedBalance = parseFloat(ethers.formatUnits(balance, decimals)).toFixed(6);
+
+    // ✅ Add Comma Separators
+    return new Intl.NumberFormat("en-US").format(parseFloat(formattedBalance));
   } catch (error) {
     console.error("Error fetching vault balance:", error);
     return "Error";
